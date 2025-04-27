@@ -1,0 +1,61 @@
+name: Deploy Shills List
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1 ▸ Check out the repo
+      - uses: actions/checkout@v4
+
+      # 2 ▸ Install Node & Yarn (with cache)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: yarn
+
+      - name: Enable Corepack (Yarn)
+        run: corepack enable
+
+      # 3 ▸ Drop auth_config.json from secret
+      - name: Write auth_config.json
+        run: |
+          cat > auth_config.json <<'EOF'
+          ${{ secrets.AUTH_CONFIG_JSON }}
+          EOF
+
+      # 4 ▸ Install deps & build
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build the app
+        run: yarn build               # relies on "build" script in package.json
+
+      # 5 ▸ Clean export directory on the server
+      - name: Clean export directory
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
+          script: |
+            set -euo pipefail
+            mkdir -p "${{ secrets.EXPORT_DIR }}"
+            rm -rf "${{ secrets.EXPORT_DIR }}"/*
+
+      # 6 ▸ Upload freshly-built files
+      - name: Upload dist/ to server
+        uses: appleboy/scp-action@v1.3.0
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
+          source: "dist/*"
+          target: "${{ secrets.EXPORT_DIR }}"
