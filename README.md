@@ -1,6 +1,6 @@
 # The Shills List
 
-![Language Composition](https://img.shields.io/badge/Vue-73%25-green) ![Language Composition](https://img.shields.io/badge/JavaScript-24.8%25-yellow) ![Language Composition](https://img.shields.io/badge/HTML-2.2%25-blue)
+[![Deploy Shills List](https://github.com/recordcrash/the-shills-list/actions/workflows/main.yml/badge.svg)](https://github.com/recordcrash/the-shills-list/actions/workflows/main.yml) ![Language Composition](https://img.shields.io/badge/Vue-73%25-green) ![Language Composition](https://img.shields.io/badge/JavaScript-24.8%25-yellow) ![Language Composition](https://img.shields.io/badge/HTML-2.2%25-blue)
 
 ![Website screenshot](screenshot.png)
 
