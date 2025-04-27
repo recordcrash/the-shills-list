@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "22"
           cache: yarn
 
       - name: Enable Corepack (Yarn)
@@ -34,7 +34,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build the app
-        run: yarn build               # relies on "build" script in package.json
+        run: yarn build
 
       # 5 ▸ Clean export directory on the server
       - name: Clean export directory

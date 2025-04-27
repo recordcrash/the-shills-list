@@ -12,7 +12,7 @@
             <li>As of the writing of this, Drew Linky and Kidpen have become successors, while seven people have managed to submit a custom shill.</li>
               </ul>
           <p><h3>More information</h3>
-          <p>The Shills List is open source, and available at <a href="https://github.com/recordcrash/shills/" target="_blank">Github</a>. Pull requests are encouraged.</p>
+          <p>The Shills List is open source, and available at <a href="https://github.com/recordcrash/the-shills-list/" target="_blank">Github</a>. Pull requests are encouraged.</p>
           <p>For more information, feedback, or custom shill requests, join the <a href="https://discord.gg/aknu95AZWZ" target="_blank">Shills List discord channel</a>.</p>
         </v-card-text>
     </v-card>
