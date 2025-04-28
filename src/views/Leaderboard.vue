@@ -98,12 +98,12 @@ export default {
     },
     getMedals(reader) {
       const medals = [];
-      const goldMedal = { name: 'Gold Medal', link: 'https://recordcrash.com/images/gold.png', description: 'A medal granted to those who finish the main shills list' };
-      const silverMedal = { name: 'Silver Medal', link: 'https://recordcrash.com/images/silver.png', description: 'A medal granted to those who finish over ten shills' };
-      const gameMedal = { name: 'Game Medal', link: 'https://recordcrash.com/images/game.png', description: 'A medal granted to those who finish all the games in the shills list' };
-      const tvMedal = { name: 'Video Medal', link: 'https://recordcrash.com/images/tv.png', description: 'A medal granted to those who finish all the video shills' };
-      const bookMedal = { name: 'Book Medal', link: 'https://recordcrash.com/images/book.png', description: 'A medal granted to those who finish the additional shills' };
-      const huskyMedal = { name: 'Husky Medal', link: 'https://recordcrash.com/images/husky.png', description: 'A medal granted to those who read one shill of every list, even custom' };
+      const goldMedal = { name: 'Gold Medal', link: '/images/gold.png', description: 'A medal granted to those who finish the main shills list' };
+      const silverMedal = { name: 'Silver Medal', link: '/images/silver.png', description: 'A medal granted to those who finish over ten shills' };
+      const gameMedal = { name: 'Game Medal', link: '/images/game.png', description: 'A medal granted to those who finish all the games in the shills list' };
+      const tvMedal = { name: 'Video Medal', link: '/images/tv.png', description: 'A medal granted to those who finish all the video shills' };
+      const bookMedal = { name: 'Book Medal', link: '/images/book.png', description: 'A medal granted to those who finish the additional shills' };
+      const huskyMedal = { name: 'Husky Medal', link: '/images/husky.png', description: 'A medal granted to those who read one shill of every list, even custom' };
       const goldMedalArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 61];
       const gameMedalArray = [30, 31, 32];
       const tvMedalArray = [33, 34];
